@@ -17,7 +17,7 @@ class Infrared:
     def read_one_infrared(self, channel: int) -> int:
         """Read the value of a single infrared sensor."""
         if channel in self.sensors:
-            return 1 if self.sensors[channel].value else 0
+            return 0 if self.sensors[channel].value else 1
         else:
             raise ValueError(f"Invalid channel: {channel}. Valid channels are {list(self.IR_PINS.keys())}.")
 
